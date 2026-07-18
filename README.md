@@ -1,6 +1,6 @@
 # 💼 My Portfolio
 
-Welcome to my personal portfolio website! This project showcases my skills, projects, and experience as a [Your Role, e.g., Frontend Developer / Data Analyst / Student].
+Welcome to my personal portfolio website! This project showcases my skills, projects, and experience as a Frontend Developer / Data Analyst / Student.
 
 ## 🔗 Live Demo
 
@@ -23,7 +23,7 @@ This portfolio is designed to give visitors a quick and engaging overview of who
 - HTML5
 - CSS3
 - JavaScript
-- [Any libraries you used, e.g., Three.js for 3D background]
+- Three.js for 3D background]
 
 ## 📁 Project Structure
 
