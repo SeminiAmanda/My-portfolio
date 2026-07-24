@@ -4,7 +4,7 @@ Welcome to my personal portfolio website! This project showcases my skills, proj
 
 ## 🔗 Live Demo
 
-[View Live Site](your-live-link-here)
+[View Live Site](https://seminiamanda.netlify.app/)
 
 ## 📌 About
 
