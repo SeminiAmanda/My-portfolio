@@ -202,34 +202,44 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function (e) {
-            e.preventDefault();
+    contactForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const btn = contactForm.querySelector('button');
+    const originalText = btn.innerHTML;
 
-            const btn = contactForm.querySelector('button');
-            const originalText = btn.innerHTML;
+    btn.innerHTML = '<span>Sending...</span> <i class="fa-solid fa-spinner fa-spin"></i>';
+    btn.style.opacity = '0.7';
+    btn.style.pointerEvents = 'none';
 
-            btn.innerHTML = '<span>Sending...</span> <i class="fa-solid fa-spinner fa-spin"></i>';
-            btn.style.opacity = '0.7';
-            btn.style.pointerEvents = 'none';
-
-            setTimeout(() => {
-                btn.innerHTML = '<span>Message Delivered!</span> <i class="fa-solid fa-check"></i>';
-                btn.style.background = 'linear-gradient(90deg, #22c55e, #16a34a, #22c55e)';
-                btn.style.borderColor = '#4ade80';
-                contactForm.reset();
-
-                setTimeout(() => {
-                    btn.innerHTML = originalText;
-                    btn.style.background = '';
-                    btn.style.borderColor = '';
-                    btn.style.opacity = '1';
-                    btn.style.pointerEvents = 'all';
-                }, 3000);
-            }, 1500);
-        });
-    }
+    fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { 'Accept': 'application/json' }
+    })
+    .then(response => {
+        if (response.ok) {
+            btn.innerHTML = '<span>Message Delivered!</span> <i class="fa-solid fa-check"></i>';
+            btn.style.background = 'linear-gradient(90deg, #22c55e, #16a34a, #22c55e)';
+            btn.style.borderColor = '#4ade80';
+            contactForm.reset();
+        } else {
+            throw new Error('Form error');
+        }
+    })
+    .catch(() => {
+        btn.innerHTML = '<span>Failed — try emailing directly</span>';
+        btn.style.background = 'linear-gradient(90deg, #ef4444, #dc2626)';
+    })
+    .finally(() => {
+        setTimeout(() => {
+            btn.innerHTML = originalText;
+            btn.style.background = '';
+            btn.style.borderColor = '';
+            btn.style.opacity = '1';
+            btn.style.pointerEvents = 'all';
+        }, 3000);
+    });
+});
 
     const resumeModal = document.getElementById('resumeModal');
     const openResumeBtn = document.getElementById('openResumeBtn');
