@@ -27,14 +27,15 @@ This portfolio is designed to give visitors a quick and engaging overview of who
 
 ## 📁 Project Structure
 
+```text
 Portfolio/
-├── index.html              # Main landing page
-├── hero-intro.html         # Hero/intro section
-├── script.js                # Main JavaScript functionality
-├── 3d_background.js         # 3D animated background
-├── style.css                 # Styling
-├── proffesionalimage.png     # Profile/professional image
-└── Comparative_Analysis...   # Supporting content/analysis
+├── index.html                 # Main landing page
+├── hero-intro.html            # Hero/intro section
+├── script.js                  # Main JavaScript functionality
+├── 3d_background.js            # 3D animated background
+├── style.css                  # Styling
+├── proffessionalimage.png       # Profile/professional image
+└── Comparative_Analysis...    # Supporting content/analysis
 
 
 ## 🚀 Getting Started
