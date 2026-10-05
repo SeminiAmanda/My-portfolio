@@ -34,7 +34,7 @@ Portfolio/
 ├── script.js                  # Main JavaScript functionality
 ├── 3d_background.js            # 3D animated background
 ├── style.css                  # Styling
-├── proffessionalimage.png       # Profile/professional image
+├── professionalimage.png       # Profile/professional image
 └── Comparative_Analysis...    # Supporting content/analysis
 
 
